@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TheCheezery" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">@color/very_purple</item>
+        <item name="android:navigationBarColor">@color/dusty_white</item>
+        <item name="android:statusBarColor">@color/purple_grey</item>
+    </style>
+
+    <style name="Theme.TheCheezery" parent="Base.Theme.TheCheezery" />
+</resources>
