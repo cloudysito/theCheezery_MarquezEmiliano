@@ -1,9 +1,8 @@
-package marquez.emiliano.thecheezery.data
+package marquez.emiliano.thecheezery.model.data
 
 import marquez.emiliano.thecheezery.R
-import marquez.emiliano.thecheezery.domain.Product
-
-data class Category(val title: String, val products: List<Product>)
+import marquez.emiliano.thecheezery.model.domain.Category
+import marquez.emiliano.thecheezery.model.domain.Product
 
 object Products {
     val categories = listOf(

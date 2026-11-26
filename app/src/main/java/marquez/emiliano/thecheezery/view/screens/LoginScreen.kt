@@ -13,7 +13,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import marquez.emiliano.thecheezery.ui.theme.TheCheezeryTheme
 
 @Composable
 fun LoginScreen(innerPadding: PaddingValues, onLogin: () -> Unit) {
@@ -34,5 +36,16 @@ fun LoginScreen(innerPadding: PaddingValues, onLogin: () -> Unit) {
         Button(onClick = { submitted = true; if (validEmail && password.isNotBlank()) onLogin() }) {
             Text("LOGIN")
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun LoginScreenPreview() {
+    TheCheezeryTheme {
+        LoginScreen(
+            innerPadding = PaddingValues(0.dp),
+            onLogin = {}
+        )
     }
 }

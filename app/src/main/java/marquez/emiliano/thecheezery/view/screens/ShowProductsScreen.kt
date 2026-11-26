@@ -7,11 +7,15 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.runtime.remember
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import marquez.emiliano.thecheezery.data.Category
-import marquez.emiliano.thecheezery.domain.Product
+import marquez.emiliano.thecheezery.model.data.Products
+import marquez.emiliano.thecheezery.model.domain.Category
+import marquez.emiliano.thecheezery.model.domain.Product
 import marquez.emiliano.thecheezery.ui.theme.LessPurple
+import marquez.emiliano.thecheezery.ui.theme.TheCheezeryTheme
 import marquez.emiliano.thecheezery.viewmodel.CheezeryViewModel
 
 @Composable
@@ -39,5 +43,31 @@ private fun ProductCard(product: Product, onAdd: () -> Unit) {
                 Button(onClick = onAdd) { Text("ADD") }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ShowProductsScreenPreview() {
+    val sampleViewModel = remember { CheezeryViewModel() }
+    TheCheezeryTheme {
+        ShowProductsScreen(
+            innerPadding = PaddingValues(0.dp),
+            category = Products.categories.first(),
+            viewModel = sampleViewModel,
+            onBack = {},
+            onCart = {}
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProductCardPreview() {
+    TheCheezeryTheme {
+        ProductCard(
+            product = Products.categories.first().products.first(),
+            onAdd = {}
+        )
     }
 }

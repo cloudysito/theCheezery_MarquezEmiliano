@@ -5,9 +5,10 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import marquez.emiliano.thecheezery.data.Category
-import marquez.emiliano.thecheezery.data.Products
+import marquez.emiliano.thecheezery.model.data.Products
+import marquez.emiliano.thecheezery.model.domain.Category
 import marquez.emiliano.thecheezery.viewmodel.CheezeryViewModel
+import marquez.emiliano.thecheezery.view.screens.AddComboScreen
 import marquez.emiliano.thecheezery.view.screens.CartScreen
 import marquez.emiliano.thecheezery.view.screens.LoginScreen
 import marquez.emiliano.thecheezery.view.screens.MenuScreen
@@ -32,7 +33,8 @@ fun TheCheezeryNavHost(innerPadding: PaddingValues, viewModel: CheezeryViewModel
                     SelectedCategory.value = category
                     navController.navigate(Products)
                 },
-                onCart = { navController.navigate(Cart) }
+                onCart = { navController.navigate(Cart) },
+                onAddCombo = { navController.navigate(AddCombo) }
             )
         }
         composable<Products> {
@@ -42,6 +44,9 @@ fun TheCheezeryNavHost(innerPadding: PaddingValues, viewModel: CheezeryViewModel
         }
         composable<Cart> {
             CartScreen(innerPadding, viewModel) { navController.popBackStack() }
+        }
+        composable<AddCombo> {
+            AddComboScreen(innerPadding, viewModel) { navController.popBackStack() }
         }
     }
 }

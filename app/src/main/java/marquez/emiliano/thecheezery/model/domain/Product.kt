@@ -1,4 +1,4 @@
-package marquez.emiliano.thecheezery.domain
+package marquez.emiliano.thecheezery.model.domain
 
 import androidx.annotation.DrawableRes
 

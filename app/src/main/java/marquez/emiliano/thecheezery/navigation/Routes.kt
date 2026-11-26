@@ -7,3 +7,4 @@ import kotlinx.serialization.Serializable
 @Serializable object Menu
 @Serializable object Products
 @Serializable object Cart
+@Serializable object AddCombo
